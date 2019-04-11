@@ -46,6 +46,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
   line-height: 1;
+  background-color: #EFEFEF;
 }
 ol, ul {
   list-style: none;
@@ -64,13 +65,34 @@ table {
 }
 
 header {
-  background-color: red;
+  border: solid 1px #999;
+  height: 6vh;
+  position: relative;
+  background-color: #000033;
+}
+
+.contents-container {
+  height: 115vh;
+  position: relative;
 }
 
 .contents {
-  background-color : blue;
+  background-color : white;
 }
 
 footer {
-  background-color: green;
+  border: solid 1px #999;
+  color:#999;
+  height: 15vh;
+  width: 100vw;
+  position: absolute;
+  bottom: 0;
+}
+
+.logo {
+  height: 4vh;
+  width: 10vw;
+  position: absolute;
+  top: 1vh;
+  left: 45vw;
 }

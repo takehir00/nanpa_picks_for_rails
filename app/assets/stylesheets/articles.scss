@@ -1,3 +1,33 @@
 // Place all the styles related to the articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.articles {
+  width: 70vw;
+  margin: auto;
+  background-color: yellow;
+}
+
+.article {
+  height: 20vh;
+  width: 15vw;
+  border: solid 1px;
+}
+
+.article-left {
+  margin-top: 40px;
+  margin-left: 6.5vw;
+  float: left;
+}
+
+.article-middle {
+  margin-top: 40px;
+  margin-left: 6vw;
+  float: left;
+}
+
+.article-right {
+  margin-top: 40px;
+  margin-left: 6vw;
+  float: left;
+}
