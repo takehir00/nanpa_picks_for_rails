@@ -2,27 +2,14 @@
  <%= image_tag("Cool Text - Nanpa Picks 320536841211368.png", class: "logo")%>
 </header>
 <div class="contents">
-  <div class="articles">
-      <div class="article article-left">
-        <%= @articles %>
+  <% @articles.each do |article|%>
+    <div class="articles">
+      <div class="article">
+        <%= link_to article.title, article_path(article)%>
+        <%= image_tag(article.src, size: "100x100")%>
       </div>
-      <div class="article article-middle">
-      </div>
-      <div class="article article-right">
-      </div>
-      <div class="article article-left">
-      </div>
-      <div class="article article-middle">
-      </div>
-      <div class="article article-right">
-      </div>
-      <div class="article article-left">
-      </div>
-      <div class="article article-middle">
-      </div>
-      <div class="article article-right">
-      </div>
-  </div>
+    </div>
+  <% end %>
 </div>
 <footer>
   Nanpa Picksについて
