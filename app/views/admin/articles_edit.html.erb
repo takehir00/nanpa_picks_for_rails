@@ -1,0 +1,25 @@
+<header class="admin-header">
+ <%= link_to "管理画面", "/admin/top"%>
+</header>
+<nav class="admin-nav">
+  <ul>
+    <li class="admin-nav-li">
+      <%= link_to "記事一覧", "/admin/articles/index"%>
+    </li>
+    <li class="admin-nav-li">
+      <%= link_to "記事登録", "/admin/articles/new"%>
+    </li>
+  </ul>
+</nav>
+<div class="admin-content">
+  <h1 class="admin-content-title">記事編集フォーム</h1>
+  <%= form_with model: @article, scope: :put, url: article_path do |f| %>
+    <%= f.label :url%>
+    <%= f.text_field :url, id: :url, class: ""%>
+    <%= f.label :title, :記事タイトル文%>
+    <%= f.text_field :title, id: :title, class: ""%>
+    <%= f.label :src, :画像Url%>
+    <%= f.text_field :src, id: :src, class: ""%>
+    <%= f.submit :編集%>
+  <% end %>
+</div>

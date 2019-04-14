@@ -1,0 +1,22 @@
+<header>
+ <%= image_tag("Cool Text - Nanpa Picks 320536841211368.png", class: "logo")%>
+</header>
+<div class="contents">
+  <div class="selected-article">
+    <div class="selected-article-image">
+      <%= image_tag(@article.src, size: "100x100")%>
+    </div>
+    <div class="selected-article-title">
+      <%= @article.title %>
+    </div>
+    <div class="selected-article-next">
+      <%= link_to "続きを読む", @article.url, target: :_blank%>
+    </div>
+  </div>
+  <div class="comments">
+
+  </div>
+</div>
+<footer>
+  Nanpa Picksについて
+</footer>
