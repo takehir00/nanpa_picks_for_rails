@@ -4,7 +4,7 @@
 <div class="contents">
   <h1>ユーザー登録</h1>
   <div class="form">
-    <%= form_with scope: :post, url: users_path do |f| %>
+    <%= form_with model: @user do |f| %>
       <%= f.label :name, :名前%>
       <%= f.text_field :name, id: :name, class: ""%>
       <%= f.label :email, :メールアドレス%>
