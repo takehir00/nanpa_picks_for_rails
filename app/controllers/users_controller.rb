@@ -3,11 +3,11 @@ class UsersController < ApplicationController
   end
 
   def new
-
+    @user = User.new
   end
 
   def create
-    @user = User.new(name: params[:post][:name], email: params[:post][:email], password: params[:post][:password], password_confirmation: params[:post][:password_confirmation])
+    @user = User.new(name: params[:user][:name], email: params[:user][:email], password: params[:user][:password], password_confirmation: params[:user][:password_confirmation])
     @user.save
     redirect_to("/")
   end
