@@ -1,9 +1,16 @@
 <header>
- ヘッダー
+ <%= image_tag("Cool Text - Nanpa Picks 320536841211368.png", class: "logo")%>
 </header>
 <div class="contents">
-  記事一覧
+  <% @articles.each do |article|%>
+    <div class="articles">
+      <div class="article">
+        <%= link_to article.title, article_path(article)%>
+        <%= image_tag(article.src, size: "100x100")%>
+      </div>
+    </div>
+  <% end %>
 </div>
 <footer>
-  nanpapicks
+  Nanpa Picksについて
 </footer>

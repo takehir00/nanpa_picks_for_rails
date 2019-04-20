@@ -1,3 +1,32 @@
-// Place all the styles related to the articles controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+//記事一覧
+.articles {
+  width: 70vw;
+  margin: auto;
+  background-color: yellow;
+}
+
+.article {
+  height: 20vh;
+  width: 15vw;
+  border: solid 1px;
+  margin-top: 40px;
+  margin-left: 6vw;
+  float: left;
+}
+
+//記事詳細
+.selected-article {
+  border: solid 1px;
+  height: 30vh;
+  width: 30vw;
+  margin: 0 auto;
+  background-color: white;
+}
+
+.comments {
+  border: solid 1px;
+  height: 30vh;
+  width: 30vw;
+  margin: 3vh auto;
+  background-color: white;
+}

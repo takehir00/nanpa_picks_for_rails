@@ -1,0 +1,22 @@
+<header>
+ <%= image_tag("Cool Text - Nanpa Picks 320536841211368.png", class: "logo")%>
+</header>
+<div class="contents">
+  <h1>ユーザー登録</h1>
+  <div class="form">
+    <%= form_with scope: :post, url: users_path do |f| %>
+      <%= f.label :name, :名前%>
+      <%= f.text_field :name, id: :name, class: ""%>
+      <%= f.label :email, :メールアドレス%>
+      <%= f.text_field :email, id: :email, class: ""%>
+      <%= f.label :password, :パスワード%>
+      <%= f.password_field :password, id: :password, class: ""%>
+      <%= f.label :password, :パスワードの確認%>
+      <%= f.password_field :password_confirmation, id: :password_confirmation, class: ""%>
+      <%= f.submit :登録%>
+    <% end %>
+  </div>
+</div>
+<footer>
+  Nanpa Picksについて
+</footer>
