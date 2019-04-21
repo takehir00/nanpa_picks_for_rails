@@ -19,7 +19,6 @@ class ArticlesController < ApplicationController
 
   def update
     @article = Article.find(params[:id])
-    puts params[:put][:url]
     @article.url = params[:put][:url]
     @article.title = params[:put][:title]
     @article.src = params[:put][:src]
