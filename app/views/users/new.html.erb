@@ -1,6 +1,5 @@
-<header>
- <%= image_tag("Cool Text - Nanpa Picks 320536841211368.png", class: "logo")%>
-</header>
+<%= render partial: 'shared/header'%>
+
 <div class="contents">
   <h1>ユーザー登録</h1>
   <div class="form">
@@ -17,6 +16,5 @@
     <% end %>
   </div>
 </div>
-<footer>
-  Nanpa Picksについて
-</footer>
+
+<%= render partial: 'shared/footer' %>
