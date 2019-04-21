@@ -19,14 +19,21 @@ class UsersController < ApplicationController
   end
 
   def login
-    #フォームから送られてきたメアドとパスワードでデータベースに対して検索をかけてtrueを返したらsession[:user_id]にここで取得したユーザーのidを入れてredirectする?
-    #password_digestを使うようにしたのでなんかそこの照合をする実装が必要なはず。
-    @user = User.find(email: params[:post][:email])
-
-
+    @user = User.find_by(email: params[:session][:email])
+    if @user&.authenticate(params[:session][:password])
+      session[:user_id] = @user.id
+      flash[:notice] = "ログインしました"
+      redirect_to("/")
+    else
+      @user.email = params[:session][:email]
+      redirect_to("/login_form")
+    end
   end
 
   def logout
-
+    puts session[:user_id]
+    reset_session
+    flash[:notice] = "ログアウトしました"
+    redirect_to("/")
   end
 end

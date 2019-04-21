@@ -4,7 +4,7 @@
 <div class="contents">
   <h1>ログイン</h1>
   <div class="form">
-    <%= form_with scope: :post, url: login_path do |f| %>
+    <%= form_with scope: :session, url: login_path do |f| %>
       <%= f.label :email, :メールアドレス%>
       <%= f.text_field :email, id: :email, class: ""%>
       <%= f.label :password, :パスワード%>
