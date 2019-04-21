@@ -1,6 +1,5 @@
-<header>
- <%= image_tag("Cool Text - Nanpa Picks 320536841211368.png", class: "logo")%>
-</header>
+<%= render partial: 'shared/header'%>
+
 <div class="contents">
   <% @articles.each do |article|%>
     <div class="articles">
@@ -11,6 +10,5 @@
     </div>
   <% end %>
 </div>
-<footer>
-  Nanpa Picksについて
-</footer>
+
+<%= render partial: 'shared/footer' %>
