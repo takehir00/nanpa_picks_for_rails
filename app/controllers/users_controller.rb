@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   def show
+    @user = User.find(params[:id])
   end
 
   def new
@@ -13,6 +14,13 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @user = User.find(params[:id])
+  end
+
+  def update
+    @user = User.find(params[:id])
+    @user.update!(name: params[:user][:name], email: params[:user][:email], introduction: params[:user][:introduction], image: params[:user][:image],password: params[:user][:password])
+    redirect_to("/")
   end
 
   def login_form

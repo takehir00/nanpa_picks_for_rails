@@ -2,6 +2,7 @@
  <%= image_tag("Cool Text - Nanpa Picks 320536841211368.png", class: "logo") %>
  <% if current_user %>
   <%= link_to "ログアウト", logout_path, method: "delete" %>
+  <%= link_to "マイアカウント", user_path(current_user.id)%>
  <% else %>
   <%= link_to "ログイン", login_form_path %>
  <% end %>
