@@ -13,11 +13,27 @@
     </div>
   </div>
   <div class="comments">
-    <%= form_with model: @comment, url: "comments/:article_id/:user_id" do |f| %>
-      <%= f.label :content, :コメント%>
-      <%= f.text_area :content, id: :content, class: ""%>
-      <%= f.submit :投稿する%>
-    <% end %>
+    <div class="comments-form">
+      <%= form_with model: @comment, url: "comments/#{@article.id}/#{current_user.id}" do |f| %>
+        <%= f.label :content, :コメント%>
+        <%= f.text_area :content, id: :content, class: ""%>
+        <%= f.submit :投稿する%>
+      <% end %>
+    </div>
+    <div class="comments-comment">
+      <% @comments.each do |comment|%>
+        <div class="comment">
+          <!-- コメントしたユーザーの名前とアイコンも表示 -->
+          <% if comment.user.image.url.present? %>
+            <%= image_tag(comment.user.image.url, size: "50x50")%>
+          <% else %>
+            <%= image_tag("笑い男.jpg", size: "50x50") %>
+          <% end %>
+          <%= comment.user.name%>
+          <%= comment.content %>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
 
