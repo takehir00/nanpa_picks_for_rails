@@ -1,2 +1,20 @@
-<h1>Admin::Users#new</h1>
-<p>Find me in app/views/admin/users/new.html.erb</p>
+<%= render partial: 'admin/shared/header'%>
+
+<%= render partial: 'admin/shared/nav'%>
+
+<div class="class="admin-content"">
+  <h1>ユーザー登録</h1>
+  <div class="form">
+    <%= form_with model: @user, url: admin_users_path do |f| %>
+      <%= f.label :name, :名前%>
+      <%= f.text_field :name, id: :name, class: ""%>
+      <%= f.label :email, :メールアドレス%>
+      <%= f.text_field :email, id: :email, class: ""%>
+      <%= f.label :password, :パスワード%>
+      <%= f.password_field :password, id: :password, class: ""%>
+      <%= f.label :password, :パスワードの確認%>
+      <%= f.password_field :password_confirmation, id: :password_confirmation, class: ""%>
+      <%= f.submit :登録%>
+    <% end %>
+  </div>
+</div>

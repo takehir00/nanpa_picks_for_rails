@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
 
   namespace :admin do
-    get 'users/new'
-    get 'users/edit'
-    get 'users/index'
+    resources :users
+    # get 'users/new'
+    # get 'users/edit/:id', to:
+    # get 'users/index'
+    # post 'users', to: 'users#create'
   end
 
   #admin機能
