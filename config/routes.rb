@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-  post 'comments/:article_id/:user_id', to: 'comments#create'
-  get 'comments/update'
-  get 'comments/destroy'
+
   #admin機能
   get 'admin/top', to: 'admin#top'
   get 'admin/articles/index', to: 'admin#articles_index'
@@ -19,4 +17,7 @@ Rails.application.routes.draw do
   delete 'logout', to: 'users#logout'
 
   #comments機能
+  post 'articles/comments/:article_id/:user_id', to: 'comments#create'
+  get 'comments/update'
+  get 'comments/destroy'
 end
