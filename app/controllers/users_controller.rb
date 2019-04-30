@@ -1,6 +1,17 @@
 class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
+    #このユーザーのidを持つコメントたちを検索する。
+    comments = Comment.where(user_id: @user.id)
+    #そのコメントたちの持つarticle_idから記事たちを検索してviewに返す
+    #一つの記事に対しての一人のユーザーのコメントは複数ある。このまま抽出すると記事がダブる。配列のダブり要素を排除するメソッドがあればそれ使う。なかったらちょっと考える
+    articles = Array.new
+    #そのコメントたちの持つarticle_idから記事たちを検索して、配列にぶち込んでいく
+    comments.each do |comment|
+      article = Article.find_by(id: comment.article_id)
+      articles.push(article)
+    end
+    @articles = articles.uniq
   end
 
   def new
@@ -9,8 +20,13 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(name: params[:user][:name], email: params[:user][:email], password: params[:user][:password], password_confirmation: params[:user][:password_confirmation])
-    @user.save
-    redirect_to("/")
+    if @user.save
+      session[:user_id] = @user.id
+      flash[:notice] = "サインアップに成功しました"
+      redirect_to("/")
+    else
+      redirect_to("/")
+    end
   end
 
   def edit
