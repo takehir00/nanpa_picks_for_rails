@@ -1,16 +1,7 @@
-<header class="admin-header">
- <%= link_to "管理画面", "/admin/top"%>
-</header>
-<nav class="admin-nav">
-  <ul>
-    <li class="admin-nav-li">
-      <%= link_to "記事一覧", "/admin/articles/index"%>
-    </li>
-    <li class="admin-nav-li">
-      <%= link_to "記事登録", "/admin/articles/new"%>
-    </li>
-  </ul>
-</nav>
+<%= render partial: 'admin/shared/header'%>
+
+<%= render partial: 'admin/shared/nav'%>
+
 <div class="admin-content">
   <h1 class="admin-content-title">記事登録フォーム</h1>
   <%= form_with scope: :post, url: users_path do |f| %>

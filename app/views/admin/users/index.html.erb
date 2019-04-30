@@ -1,0 +1,24 @@
+<%= render partial: 'admin/shared/header'%>
+
+<%= render partial: 'admin/shared/nav'%>
+
+<div class="class="admin-content"">
+  <table>
+    <tr>
+      <th></th>
+      <th>id</th>
+      <th>url</th>
+      <th>title</th>
+      <th>src</th>
+    </tr>
+    <% @users.each do |user|%>
+      <tr>
+        <td><%= link_to "編集", ""%></td>
+        <td><%= link_to "削除", "", method: "delete"%></td>
+        <td><%= user.id%></td>
+        <td><%= user.email%></td>
+        <td><%= user.introduction%></td>
+      </tr>
+    <% end %>
+  </table>
+</div>

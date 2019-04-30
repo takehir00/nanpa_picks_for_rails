@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  namespace :admin do
+    get 'users/new'
+    get 'users/edit'
+    get 'users/index'
+  end
+
   #admin機能
   get 'admin/top', to: 'admin#top'
   get 'admin/articles/index', to: 'admin#articles_index'
