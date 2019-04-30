@@ -14,6 +14,20 @@ class Admin::UsersController < ApplicationController
   end
 
   def edit
+    @user = User.find(params[:id])
+    puts @user.image.url
+  end
+
+  def update
+    @user = User.find(params[:id])
+    @user.update!(name: params[:user][:name], email: params[:user][:email], introduction: params[:user][:introduction], image: params[:user][:image],password: params[:user][:password])
+    redirect_to(admin_top_path)
+  end
+
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+    redirect_to(admin_top_path)
   end
 
 

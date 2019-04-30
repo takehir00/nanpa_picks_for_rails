@@ -6,16 +6,19 @@
   <table>
     <tr>
       <th></th>
+      <th></th>
       <th>id</th>
-      <th>url</th>
-      <th>title</th>
-      <th>src</th>
+      <th>名前</th>
+      <th>email</th>
+      <th>自己紹介</th>
+      <th>画像</th>
     </tr>
     <% @users.each do |user|%>
       <tr>
-        <td><%= link_to "編集", ""%></td>
-        <td><%= link_to "削除", "", method: "delete"%></td>
+        <td><%= link_to "編集", edit_admin_user_path(user)%></td>
+        <td><%= link_to "削除", admin_user_path(user), method: "delete"%></td>
         <td><%= user.id%></td>
+        <td><%= user.name%></td>
         <td><%= user.email%></td>
         <td><%= user.introduction%></td>
       </tr>
