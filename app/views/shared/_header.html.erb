@@ -4,6 +4,7 @@
   <%= link_to "ログアウト", logout_path, method: "delete" %>
   <%= link_to "マイアカウント", user_path(current_user.id)%>
  <% else %>
+  <%= link_to "サインアップ", new_user_path%>
   <%= link_to "ログイン", login_form_path %>
  <% end %>
 </header>
