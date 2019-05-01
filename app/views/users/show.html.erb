@@ -18,12 +18,14 @@
 
   <div class="user-comment-articles">
     <p>あなたがコメントした記事一覧</p>
-    <% @articles.each do |article|%>
-        <div class="user-comment-article">
-          <%= link_to article.title, article_path(article)%>
-          <%= image_tag(article.src, size: "100x100")%>
-        </div>
-  <% end %>
+    <% if @articles%>
+      <% @articles.each do |article|%>
+          <div class="user-comment-article">
+            <%= link_to article.title, article_path(article)%>
+            <%= image_tag(article.src, size: "100x100")%>
+          </div>
+      <% end %>
+    <%end%>
   </div>
 </div>
 
