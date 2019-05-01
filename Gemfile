@@ -64,3 +64,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'mechanize'
 gem 'mysql2'
 gem 'carrierwave', '~> 1.0'
+gem 'kaminari'
