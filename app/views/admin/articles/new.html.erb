@@ -1,0 +1,16 @@
+<%= render partial: 'admin/shared/header'%>
+
+<%= render partial: 'admin/shared/nav'%>
+
+<div class="admin-content">
+  <h1 class="admin-content-title">記事登録フォーム</h1>
+  <%= form_with model: @article, url: admin_articles_path do |f| %>
+    <%= f.label :url%>
+    <%= f.text_field :url, id: :url, class: ""%>
+    <%= f.label :title, :記事タイトル文%>
+    <%= f.text_field :title, id: :title, class: ""%>
+    <%= f.label :src, :画像Url%>
+    <%= f.text_field :src, id: :src, class: ""%>
+    <%= f.submit :登録%>
+  <% end %>
+</div>

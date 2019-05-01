@@ -1,0 +1,25 @@
+<%= render partial: 'admin/shared/header'%>
+
+<%= render partial: 'admin/shared/nav'%>
+
+<div class="class="admin-content"">
+  <table>
+    <tr>
+      <th></th>
+      <th>id</th>
+      <th>url</th>
+      <th>title</th>
+      <th>src</th>
+    </tr>
+    <% @articles.each do |article|%>
+      <tr>
+        <td><%= link_to "編集", edit_admin_article_path(article)%></td>
+        <td><%= link_to "削除", admin_article_path(article), method: "delete"%></td>
+        <td><%= article.id%></td>
+        <td><%= article.url%></td>
+        <td><%= article.title%></td>
+        <td><%= article.src%></td>
+      </tr>
+    <% end %>
+  </table>
+</div>

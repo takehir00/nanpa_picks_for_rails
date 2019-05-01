@@ -21,9 +21,9 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @article = Article.new(url: params[:url], title: params[:title], src: params[:src])
+    @article = Article.new(url: params[:article][:url], title: params[:article][:title], src: params[:article][:src])
     @article.save
-    redirect_to("/admin/articles/index")
+    redirect_to(admin_articles_path)
   end
 
   def update
@@ -32,13 +32,13 @@ class ArticlesController < ApplicationController
     @article.title = params[:put][:title]
     @article.src = params[:put][:src]
     @article.save
-    redirect_to("/admin/articles/index")
+    redirect_to(admin_articles_path)
   end
 
   def destroy
     @article = Article.find(params[:id])
     @article.destroy
-    redirect_to("/admin/articles/index")
+    redirect_to(admin_articles_path)
   end
 
 
