@@ -11,9 +11,7 @@
       <%= f.label :email, :メールアドレス%>
       <%= f.text_field :email, id: :email, class: ""%>
       <%= f.label :image, :画像%>
-      <% if @user.image.url %>
-        <%= image_tag(@user.image.url, size: "50x50")%>
-      <%end%>
+      <%= image_tag(@user.image.url, size: "50x50")%>
       <%= f.file_field :image, id: :image, class: ""%>
       <%= f.label :introduction, :自己紹介%>
       <%= f.text_field :introduction, id: :introduction, class: ""%>
