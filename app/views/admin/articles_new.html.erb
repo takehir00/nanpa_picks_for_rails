@@ -4,7 +4,7 @@
 
 <div class="admin-content">
   <h1 class="admin-content-title">記事登録フォーム</h1>
-  <%= form_with scope: :post, url: users_path do |f| %>
+  <%= form_with model: @article, url: users_path do |f| %>
     <%= f.label :url%>
     <%= f.text_field :url, id: :url, class: ""%>
     <%= f.label :title, :記事タイトル文%>
