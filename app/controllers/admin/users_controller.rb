@@ -15,7 +15,6 @@ class Admin::UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
-    puts @user.image.url
   end
 
   def update

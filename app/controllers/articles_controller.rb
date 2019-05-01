@@ -9,7 +9,6 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
-    puts @article.id
     @comment = Comment.new
     #街灯のarticleのidど合致するarticle_idをもつcommentを表示する
     comments = Comment.where(article_id: @article.id)

@@ -16,7 +16,7 @@ class CommentsController < ApplicationController
   private
 
   def login?
-    if current_user.empty?
+    if !current_user
       flash[:notice] = "ログインしてください"
       redirect_to(login_form_path)
     end
