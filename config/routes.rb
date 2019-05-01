@@ -1,18 +1,22 @@
 Rails.application.routes.draw do
 
+  # namespace :admin do
+  #   get 'articles/top'
+  #   get 'articles/index'
+  #   get 'articles/new'
+  #   get 'articles/edit'
+  # end
   namespace :admin do
+    get '/', to: 'articles#top'
     resources :users
-    # get 'users/new'
-    # get 'users/edit/:id', to:
-    # get 'users/index'
-    # post 'users', to: 'users#create'
+    resources :articles
   end
 
-  #admin機能
-  get 'admin/top', to: 'admin#top'
-  get 'admin/articles/index', to: 'admin#articles_index'
-  get 'admin/articles/new', to: 'admin#articles_new'
-  get 'admin/articles/edit/:id', to: 'admin#articles_edit'
+  # #admin機能
+  # get 'admin/top', to: 'admin#top'
+  # get 'admin/articles/index', to: 'admin#articles_index'
+  # get 'admin/articles/new', to: 'admin#articles_new'
+  # get 'admin/articles/edit/:id', to: 'admin#articles_edit'
 
   #articles機能
   root to: 'articles#top'
