@@ -14,10 +14,14 @@
   </div>
   <div class="comments">
     <div class="comments-form">
-      <%= form_with model: @comment, url: "comments/#{@article.id}/#{current_user.id}" do |f| %>
-        <%= f.label :content, :コメント%>
-        <%= f.text_area :content, id: :content, class: ""%>
-        <%= f.submit :投稿する%>
+      <% if current_user %>
+        <%= form_with model: @comment, url: "comments/#{@article.id}/#{current_user.id}" do |f| %>
+          <%= f.label :content, :コメント%>
+          <%= f.text_area :content, id: :content, class: ""%>
+          <%= f.submit :投稿する%>
+        <% end %>
+      <% else %>
+        <p>コメントを投稿する場合は<%= link_to "ログイン", login_form_path%>してください</p>
       <% end %>
     </div>
     <div class="comments-comment">
@@ -25,7 +29,7 @@
            <% if comment.user %>
             <div class="comment">
               <%= image_tag(comment.user.image.url, size: "50x50")%>
-              <%= comment.user.name%>
+              <%= link_to comment.user.name, user_path(comment.user)%>
               <%= comment.content %>
             </div>
            <% end %>

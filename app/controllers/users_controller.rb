@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+before_action :correct_user?, only: [:edit, :update]
+
   def show
     @user = User.find(params[:id])
     #このユーザーのidを持つコメントたちを検索する。
@@ -60,4 +62,14 @@ class UsersController < ApplicationController
     flash[:notice] = "ログアウトしました"
     redirect_to("/")
   end
+
+  private
+
+  def correct_user?
+    if current_user.id != params[:id]
+      flash[:notice] = "権限がありません"
+      redirect_to(root_path)
+    end
+  end
+
 end

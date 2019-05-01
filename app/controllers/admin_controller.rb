@@ -7,6 +7,7 @@ class AdminController < ApplicationController
   end
 
   def articles_new
+    @article = Article.new
   end
 
   def articles_edit
