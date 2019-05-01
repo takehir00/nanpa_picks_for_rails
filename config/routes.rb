@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+  namespace :admin do
+    resources :users
+    # get 'users/new'
+    # get 'users/edit/:id', to:
+    # get 'users/index'
+    # post 'users', to: 'users#create'
+  end
+
   #admin機能
   get 'admin/top', to: 'admin#top'
   get 'admin/articles/index', to: 'admin#articles_index'

@@ -1,0 +1,16 @@
+<nav class="admin-nav">
+  <ul>
+    <li class="admin-nav-li">
+      <%= link_to "記事一覧", "/admin/articles/index"%>
+    </li>
+    <li class="admin-nav-li">
+      <%= link_to "記事登録", "/admin/articles/new"%>
+    </li>
+    <li class="admin-nav-li">
+      <%= link_to "ユーザー一覧", admin_users_path%>
+    </li>
+    <li class="admin-nav-li">
+      <%= link_to "ユーザー登録", new_admin_user_path%>
+    </li>
+  </ul>
+</nav>

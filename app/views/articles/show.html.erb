@@ -21,18 +21,15 @@
       <% end %>
     </div>
     <div class="comments-comment">
-      <% @comments.each do |comment|%>
-        <div class="comment">
-          <!-- コメントしたユーザーの名前とアイコンも表示 -->
-          <% if comment.user.image.url.present? %>
-            <%= image_tag(comment.user.image.url, size: "50x50")%>
-          <% else %>
-            <%= image_tag("笑い男.jpg", size: "50x50") %>
-          <% end %>
-          <%= comment.user.name%>
-          <%= comment.content %>
-        </div>
-      <% end %>
+        <% @comments.each do |comment|%>
+           <% if comment.user %>
+            <div class="comment">
+              <%= image_tag(comment.user.image.url, size: "50x50")%>
+              <%= comment.user.name%>
+              <%= comment.content %>
+            </div>
+           <% end %>
+        <% end %>
     </div>
   </div>
 </div>
