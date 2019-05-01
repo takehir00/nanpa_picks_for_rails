@@ -19,27 +19,4 @@ class ArticlesController < ApplicationController
     #なんかごちゃついてる。commentモデルクラスでwhereの検索とユーザーの検索やってくれるメソッド定義して、ここではそれを呼び出すだけな感じがよさそう。@comments = Comment.find_by_article_idみたいな。とりあえず動かしてみる
     @comments = comments
   end
-
-  def create
-    @article = Article.new(url: params[:article][:url], title: params[:article][:title], src: params[:article][:src])
-    @article.save
-    redirect_to(admin_articles_path)
-  end
-
-  def update
-    @article = Article.find(params[:id])
-    @article.url = params[:put][:url]
-    @article.title = params[:put][:title]
-    @article.src = params[:put][:src]
-    @article.save
-    redirect_to(admin_articles_path)
-  end
-
-  def destroy
-    @article = Article.find(params[:id])
-    @article.destroy
-    redirect_to(admin_articles_path)
-  end
-
-
 end
