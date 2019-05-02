@@ -1,10 +1,6 @@
 class ArticlesController < ApplicationController
   def top
-    # agent = Mechanize.new
-    # page = agent.get("http://pkup.tokyo/archives/9492")
-    # @title = page.title
-    # @src = page.search("img")[0]["src"]
-    @articles = Article.all
+    @articles = Article.all.page(params[:page]).per(15)
   end
 
   def show

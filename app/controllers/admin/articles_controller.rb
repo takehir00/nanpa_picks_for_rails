@@ -3,7 +3,7 @@ class Admin::ArticlesController < ApplicationController
   end
 
   def index
-    @articles = Article.all
+    @articles = Article.all.page(params[:page]).per(15)
   end
 
   def new
