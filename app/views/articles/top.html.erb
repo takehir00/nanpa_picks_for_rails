@@ -9,6 +9,8 @@
       </div>
     </div>
   <% end %>
+  <%= paginate @articles%>
+  <%= page_entries_info @articles %>
 </div>
 
 <%= render partial: 'shared/footer' %>

@@ -1,15 +1,23 @@
 <%= render partial: 'shared/header'%>
 
 <div class="contents">
-  <h1>ログイン</h1>
-  <div class="form">
-    <%= form_with scope: :session, url: login_path do |f| %>
-      <%= f.label :email, :メールアドレス%>
-      <%= f.text_field :email, id: :email, class: ""%>
-      <%= f.label :password, :パスワード%>
-      <%= f.password_field :password, id: :password, class: ""%>
-      <%= f.submit :ログイン%>
-    <% end %>
+  <div class="login">
+    <div class="title">
+      <h1>ログイン</h1>
+    </div>
+    <div class="form">
+      <%= form_with scope: :session, url: login_path do |f| %>
+        <div class="form-group login-form">
+          <%= f.label :email, :メールアドレス%>
+          <%= f.text_field :email, id: :email, class: "form-control"%>
+        </div>
+        <div class="form-group login-form">
+          <%= f.label :password, :パスワード%>
+          <%= f.password_field :password, id: :password, class: "form-control"%>
+        </div>
+        <%= f.submit :ログイン, class: "btn btn-primary login-btn"%>
+      <% end %>
+    </div>
   </div>
 </div>
 
